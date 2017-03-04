@@ -20,7 +20,7 @@ public interface DataBaseDao
      * @param dbName
      * @return
      */
-    Map<String, Object> findById(String id, String dbName);
+    Map findById(String id, String dbName);
     
     /**
      * 插入一个对象的数据
@@ -28,7 +28,7 @@ public interface DataBaseDao
      * @param dbName
      * @return
      */
-    boolean insert(Map<String, Object> obj, String dbName); 
+    boolean insert(Map obj, String dbName); 
     
-    List<Map<String, Object>> find(String dbName);
+    List<Map> find(String dbName);
 }
