@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 
 import com.kse.dao.DataBaseDao;
@@ -42,9 +43,13 @@ public class MongoDaoImpl implements DataBaseDao
         return true;
     }
 
-    public List<Map> find(String dbName)
+    public List<Map> find(String dbName, int crowdSize)
     {
-        List<Map> result = mongoOperation.find(new Query(), Map.class, dbName);
+    	Query query = new Query();
+    	query.limit(20);
+    	Criteria criteria = Criteria.where("crowd_size").is(crowdSize);
+    	query.addCriteria(criteria);
+        List<Map> result = mongoOperation.find(query, Map.class, dbName);
         return result;
     }
 

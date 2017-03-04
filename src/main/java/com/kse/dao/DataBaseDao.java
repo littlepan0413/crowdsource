@@ -30,5 +30,5 @@ public interface DataBaseDao
      */
     boolean insert(Map obj, String dbName); 
     
-    List<Map> find(String dbName);
+    List<Map> find(String dbName, int crowdSize);
 }

@@ -35,4 +35,9 @@
 	<bean id="mongodao" class="com.kse.dao.impl.MongoDaoImpl">
 		
 	</bean>
+	
+	<!-- 下面是service -->
+	<bean id="semeval2010" class="com.kse.service.Semeval2010Service">
+		
+	</bean>
 </beans>

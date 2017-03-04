@@ -13,10 +13,13 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
       <!-- 引入 Bootstrap -->
- 	  <link href="<c:url value='/admin/styles/bootstrap.min.css'/>" rel="stylesheet">
-	  <link href="<c:url value='/admin/styles/bootstrap-theme.min.css'/>" rel="stylesheet">
-	  <script src="<c:url value='/admin/js/jquery-3.1.1.min.js'/>"></script>
-	  <script src="<c:url value='/admin/js/bootstrap.min.js'/>"></script>
+ 	  <link href="<c:url value='/styles/bootstrap.min.css'/>" rel="stylesheet">
+	  <link href="<c:url value='/styles/bootstrap-theme.min.css'/>" rel="stylesheet">
+	  <script src="<c:url value='/js/jquery-3.1.1.min.js'/>"></script>
+	  <script src="<c:url value='/js/bootstrap.min.js'/>"></script>
+	  
+	  <link href="<c:url value='/styles/semeval/basic.css'/>" rel="stylesheet">
+	  <script src="<c:url value='/js/semeval/dataprocess.js'/>"></script>
 	  
       <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
       <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
@@ -26,7 +29,30 @@
       <![endif]-->
    </head>
 <body>
-	<p>heiheieh</p>
-	 
+	<div id="content">
+		<div id="num" class="base"></div>
+		<div id="orginsentence" class="base"></div>
+		<div id="wordspostag" class="base"></div>
+		<div id="classification" class="base"></div>
+		<div class="row">
+		  <div class="col-md-4" id="patternleft">
+		  	
+		  </div>
+		  <div class="col-md-4" id="patternmiddle">
+		  	
+		  </div>
+		  <div class="col-md-4" id="patternright">
+		  	
+		  </div>
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+	
+		$(document).ready(function(){ 
+			getOneDoc();
+		}); 
+		
+	</script>
 </body>
 </html>
