@@ -39,7 +39,7 @@ public class MongoDaoImpl implements DataBaseDao
 
     public boolean insert(Map obj, String dbName)
     {
-        mongoOperation.insert(obj, dbName);
+        mongoOperation.save(obj, dbName);
         return true;
     }
 

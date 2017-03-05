@@ -40,4 +40,12 @@ public class Semeval2010Service {
 		}
 	}
 	
+	/**
+	 * 插入一个文档
+	 * @param obj
+	 * @return
+	 */
+	public boolean insertOne(Map obj){
+		return mongoDaoImpl.insert(obj, DBNAME_1);
+	}
 }

@@ -35,4 +35,15 @@ public class SemEval2010 {
 			return null;
 		}
 	}
+	
+	@RequestMapping(value = "/crowdone.do")
+	public @ResponseBody Map crowdOne(@RequestBody Map map) {
+		try {
+			semeval2010Service.insertOne(map);
+			return semeval2010Service.getOneDoc(0);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 }
